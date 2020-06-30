@@ -40,7 +40,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'simplecov'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 3.0'
 end
 
 group :development do
