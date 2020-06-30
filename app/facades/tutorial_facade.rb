@@ -26,6 +26,7 @@ class TutorialFacade < SimpleDelegator
     videos.index(current_video)
   end
 
+
   def maximum_video_position
     videos.max_by(&:position).position
   end
