@@ -1,4 +1,6 @@
 langauge: ruby
+rvm:
+  - 2.5
 rbenv:
 - 2.5.3
 addons:
