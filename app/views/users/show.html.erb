@@ -22,7 +22,7 @@
     <h1>Followers</h1>
     <% @followers.each do |follower| %>
     <div class='follower'>
-      <li> <%= link_to "#{follower.name}", "#{follower.html_url}", class: 'follower-link' %></li>
+      <li> <%= link_to "#{follower.login}", "#{follower.html_url}", class: 'follower-link' %></li>
     </div>
     <% end %>
   </section>
