@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User' do
-  it 'user can see a Github section' do
+  xit 'user can see a Github section' do
     user = create(:user)
 
     visit '/'
@@ -20,7 +20,7 @@ describe 'User' do
     expect(page).to have_content('Github')
   end
 
-  xit 'user can see their Github repos' do
+  it 'user can see their Github repos' do
     user = create(:user)
 
     visit '/'
@@ -37,6 +37,10 @@ describe 'User' do
     expect(current_path).to eq(dashboard_path)
 
     expect(page).to have_content('Github')
-    expect(page).to have_link('Repository 1')
+    expect(page).to have_css('.repo', count: 5)
+
+    within(first('.repo')) do
+      expect(page).to have_css('.repo-link')
+    end
   end
 end
