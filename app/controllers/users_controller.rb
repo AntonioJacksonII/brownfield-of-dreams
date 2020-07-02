@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     response = conn.get('/user/repos')
     json = JSON.parse(response.body, symbolize_names: true)
     @repos = json.take(5)
+    @followers = Follower.all
   end
 
   def new
