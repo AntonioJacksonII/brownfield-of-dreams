@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     search_results = SearchResults.new
     @repos = search_results.repos
     @followers = search_results.followers
+    @following = search_results.following
   end
 
   def new
