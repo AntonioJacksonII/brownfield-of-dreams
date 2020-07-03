@@ -26,4 +26,12 @@
     </div>
     <% end %>
   </section>
+  <section class ='following-group'>
+    <h1>Following</h1>
+    <% @following.each do |following| %>
+    <div class='following-individual'>
+      <li> <%= link_to "#{following.login}", "#{following.html_url}", class: 'following-link' %></li>
+    </div>
+    <% end %>
+  </section>
 </section>
