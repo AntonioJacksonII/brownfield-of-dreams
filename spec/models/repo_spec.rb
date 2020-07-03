@@ -8,7 +8,7 @@ describe Repo, type: :model do
     }
     repo = Repo.new(attrs)
 
-    expect(repo).to be_a Repo 
+    expect(repo).to be_a Repo  
     expect(repo.name).to eq("Brownfield-of-dreams") 
     expect(repo.html_url).to eq("www.url.com") 
   end
