@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  def show; end
+  def show
+    results = RepoResults.new
+    @repos = results.repos
+  end
 
   def new
     @user = User.new
