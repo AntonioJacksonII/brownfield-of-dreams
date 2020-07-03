@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     conn = Faraday.new('https://api.github.com') do |req|
-      req.headers['Authorization'] = "token #{ENV['github_token']}"
+      req.headers['Authorization'] = "token #{ENV['GITHUB_TOKEN']}"
     end
 
     response = conn.get('/user/repos')
