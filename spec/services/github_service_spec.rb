@@ -13,10 +13,16 @@ describe 'GithubService' do
         expect(follower_data).to have_key(:html_url)
       end
     end
-  end
-end
-describe GithubService do
-  context "instance methods" do
+    context '#following' do
+      it 'returns data on who user is following' do
+        service = GithubService.new
+        search = service.following
+        expect(search).to be_a Array
+        following_data = search.first
+        expect(following_data).to have_key(:login)
+        expect(following_data).to have_key(:html_url)
+      end
+    end
     context "#user_repos" do
       it "returns repo info" do
         service = GithubService.new
