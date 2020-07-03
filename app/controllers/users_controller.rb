@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def show
+    search_results = SearchResults.new
+    @repos = search_results.repos
+    @followers = search_results.followers
+    @following = search_results.following
     results = RepoResults.new
     @repos = results.repos
   end

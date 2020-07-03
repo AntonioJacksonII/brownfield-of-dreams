@@ -18,4 +18,20 @@
       </div>
       <% end %>
   </section>
+  <section class ='followers'>
+    <h1>Followers</h1>
+    <% @followers.each do |follower| %>
+    <div class='follower'>
+      <li> <%= link_to "#{follower.login}", "#{follower.html_url}", class: 'follower-link' %></li>
+    </div>
+    <% end %>
+  </section>
+  <section class ='following-group'>
+    <h1>Following</h1>
+    <% @following.each do |following| %>
+    <div class='following-individual'>
+      <li> <%= link_to "#{following.login}", "#{following.html_url}", class: 'following-link' %></li>
+    </div>
+    <% end %>
+  </section>
 </section>
