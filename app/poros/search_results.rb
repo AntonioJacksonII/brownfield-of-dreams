@@ -15,4 +15,10 @@ class SearchResults
     json = GithubService.new.following
     @following = json.map { |following_data| Following.new(following_data) }
   end
+
+  def playlist_videos
+    json = YoutubeService.new.playlist_videos
+    binding.pry
+    @videos = json.map { |video_data| PlaylistVideo.new(video_data)}
+  end
 end
