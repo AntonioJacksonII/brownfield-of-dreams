@@ -1,0 +1,16 @@
+<h1> Import YouTube Playlist</h1><br/>
+<h3> Please enter valid playlist ID</h3>
+
+<%= form_tag admin_playlists_path do %>
+  <%= label_tag :playlist_id, "Playlist ID"%>
+  <%= text_field_tag :playlist_id%>
+
+  <%= label_tag :title, "Title"%>
+  <%= text_field_tag :title %>
+
+  <%= label_tag :description, "Description"%>
+  <%= text_field_tag :description %>
+
+  <%= submit_tag "Import" %>
+<% end %>
+
