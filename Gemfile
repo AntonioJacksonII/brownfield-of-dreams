@@ -41,6 +41,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 3.0'
+  gem 'orderly'
 end
 
 group :development do
