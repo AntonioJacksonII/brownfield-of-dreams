@@ -35,7 +35,6 @@ describe "As an admin", type: :feature do
       # click_link('View it here')
       
       visit("/tutorials/#{Tutorial.last.id}")
-      save_and_open_page
 
       expect("Maroon 5 - Memories (Official Video)").to appear_before("Dua Lipa - Don't Start Now (Official Music Video)") 
       expect(page).to have_content("The Weeknd - Blinding Lights (Official Music Video") 
