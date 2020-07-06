@@ -12,7 +12,6 @@ class YoutubeService
     }
 
     get_json('/youtube/v3/playlistItems', params)
-
   end
 
   private

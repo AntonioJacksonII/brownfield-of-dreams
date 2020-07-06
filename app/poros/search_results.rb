@@ -18,7 +18,6 @@ class SearchResults
 
   def playlist_videos
     json = YoutubeService.new.playlist_videos
-    binding.pry
-    @videos = json.map { |video_data| PlaylistVideo.new(video_data)}
+    @videos = json.map { |video_data| PlaylistVideo.new(video_data) }
   end
 end
