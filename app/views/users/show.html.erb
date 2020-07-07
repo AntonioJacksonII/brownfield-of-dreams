@@ -20,6 +20,8 @@
       </div>
       <% end %>
   </section>
+  <% end %>
+  <% if @followers %>
   <section class ='followers'>
     <h1>Followers</h1>
     <% @followers.each do |follower| %>
@@ -28,6 +30,8 @@
     </div>
     <% end %>
   </section>
+  <% end %>
+  <% if @following %>
   <section class ='following-group'>
     <h1>Following</h1>
     <% @following.each do |following| %>
