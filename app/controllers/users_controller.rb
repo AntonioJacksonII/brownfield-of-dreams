@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
     search_results = SearchResults.new
-    @repos = search_results.repos
-    @followers = search_results.followers
-    @following = search_results.following
+    @repos = search_results.repos(current_user.github_token) if current_user.github_token
+    @followers = search_results.followers(current_user.github_token) if current_user.github_token
+    @following = search_results.following(current_user.github_token) if current_user.github_token
   end
 
   def new

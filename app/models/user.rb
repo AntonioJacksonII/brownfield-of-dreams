@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   enum role: { default: 0, admin: 1 }
   has_secure_password
+
+  def self.create_with_omniauth(auth)
+    user = User.find_by(email: auth[:info][:email])
+    user.github_token = auth[:credentials][:token]
+    user.save!(validate: false)
+  end
 end

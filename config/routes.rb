@@ -43,4 +43,6 @@ Rails.application.routes.draw do
   end
 
   resources :user_videos, only:[:create, :destroy]
+
+  get '/auth/:provider/callback', to: 'sessions#create'
 end
