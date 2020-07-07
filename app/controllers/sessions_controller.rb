@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       User.create_with_omniauth(auth)
       redirect_to dashboard_path
     else
-      user = User.find_by(email: params[:session][:email]) || User.create_with_omniauth(auth)
+      user = User.find_by(email: params[:session][:email])
       if user && user.authenticate(params[:session][:password])
         session[:user_id] = user.id
         redirect_to dashboard_path
