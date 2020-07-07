@@ -5,6 +5,7 @@ class Admin::PlaylistsController < ApplicationController
     tutorial = Tutorial.create(tutorial_params)
     json = YoutubeService.new.playlist_info(params[:playlist_id])
     @videos = json[:items]
+    require "pry"; binding.pry
     @videos.each do |video|
       attributes = { 'title' => video[:snippet][:title],
                      'description' => video[:snippet][:description],

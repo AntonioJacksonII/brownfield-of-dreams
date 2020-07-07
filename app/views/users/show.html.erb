@@ -2,6 +2,7 @@
   <h1> <%= current_user.first_name %>'s Dashboard </h1>
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
+  <%= link_to 'Connect to Github', "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT_ID']}&scope=repo", class: 'btn btn-primary mb1 bg-teal' %>
   <h3>Account Details</h3>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
@@ -10,6 +11,7 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+  <% if @repos %>
   <section class='github'>
     <h1>Github</h1>
       <% @repos.each do |repo| %>
@@ -34,4 +36,5 @@
     </div>
     <% end %>
   </section>
+  <% end %>
 </section>
