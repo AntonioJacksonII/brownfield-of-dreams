@@ -42,6 +42,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 3.0'
   gem 'orderly'
+  gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 end
 
 group :development do

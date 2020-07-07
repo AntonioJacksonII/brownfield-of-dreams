@@ -44,5 +44,5 @@ Rails.application.routes.draw do
 
   resources :user_videos, only:[:create, :destroy]
 
-  get '/auth/github/callback', to: 'sessions#connect'
+  get '/auth/:provider/callback', to: 'sessions#create'
 end
